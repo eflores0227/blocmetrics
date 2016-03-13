@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @registered_application.name %>
+</p>
+
+<p>
+  <strong>URL:</strong>
+  <% @registered_application.each do |app| %>
+    <%= app.url %>
+  <% end %>
+</p>
+
+<p>
+
+<p>
+<%= link_to 'Edit', edit_registered_application_path(@registered_application) %> |
+<%= link_to 'Back', registered_application_path %>
+</p>
