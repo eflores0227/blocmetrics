@@ -7,14 +7,18 @@
 
 <p>
   <strong>URL:</strong>
-  <% @registered_application.each do |app| %>
-    <%= app.url %>
-  <% end %>
+  <% @registered_application.url %>
 </p>
 
 <p>
-
+  <strong>Event:</strong>
+  <% @registered_application.events.each do |event| %>
+  <br/>
+    <%= event.name %>
+  <% end %>
+</p>
 <p>
+<%= link_to 'Events', registered_application_events_path(1) %> |
 <%= link_to 'Edit', edit_registered_application_path(@registered_application) %> |
 <%= link_to 'Back', registered_application_path %>
 </p>

@@ -23,7 +23,9 @@ class RegisteredApplicationsController < ApplicationController
   end
 
   def show
-    @registered_application = RegisteredApplication.all
+    @registered_application = RegisteredApplication.find(params[:id])
+
+    @events = @registered_application.events.group_by(&:name)
   end
 
   def update
